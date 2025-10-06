@@ -1,0 +1,158 @@
+/* ---------- DC WiFi Theme CSS (style.css) ---------- */
+:root{
+  --accent:#0077a9;    /* DC blue */
+  --accent-2:#00a89b;  /* greenish accent */
+  --muted:#6b7280;
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --danger:#e74c3c;
+  --success:#27ae60;
+  --max-width:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#102a43;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  width:95%;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white;
+  padding:14px 0;
+  box-shadow:0 2px 6px rgba(2,6,23,0.08);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:95%;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-circle{
+  width:54px;height:54px;border-radius:10px;
+  background:rgba(255,255,255,0.14);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:white;font-size:20px;box-shadow:0 1px 0 rgba(255,255,255,0.03);
+}
+.brand-text h1{margin:0;font-size:18px;line-height:1}
+.brand-text .tag{margin:0;font-size:12px;opacity:0.95}
+
+/* Top nav */
+.link-btn{
+  color:white;
+  background:transparent;border:1px solid rgba(255,255,255,0.18);
+  padding:8px 12px;border-radius:6px;
+  cursor:pointer;font-weight:600;
+}
+.link-btn:hover{background:rgba(0,0,0,0.06)}
+
+/* Main */
+.main{padding:20px 0 40px}
+
+/* Intro */
+.intro{margin-bottom:20px;text-align:center}
+.intro h2{margin:6px 0 6px;color:#083b56}
+.lead{color:var(--muted);margin:0 auto;max-width:780px}
+
+/* Packages grid */
+.packages{
+  display:grid;
+  gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom:20px;
+}
+.plan{
+  background:var(--card);
+  border-radius:10px;padding:16px;
+  box-shadow:0 6px 20px rgba(16,42,67,0.06);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.plan h3{margin:0;color:var(--accent);font-size:16px}
+.price{color:var(--muted);font-size:13px;margin-bottom:6px}
+.buy-btn{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700;
+  width:100%;
+}
+.buy-btn:hover{filter:brightness(.95)}
+
+/* action cards */
+.actions{
+  display:grid;
+  gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom:18px;
+}
+.card{
+  background:var(--card);padding:14px;border-radius:10px;
+  box-shadow:0 6px 14px rgba(16,42,67,0.04);
+}
+.card.small h4{margin:0 0 8px 0;color:#083b56}
+.card input, .card textarea{
+  width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3;margin-bottom:10px;font-size:14px;
+}
+.card textarea{min-height:82px;resize:vertical}
+
+/* Buttons */
+.btn{
+  background:var(--accent);color:white;padding:10px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;
+}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(0,0,0,0.06)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+/* FAQ */
+.faq{margin-top:12px}
+.faq details{background:var(--card);padding:10px;border-radius:8px;margin-bottom:8px}
+.faq summary{cursor:pointer;font-weight:700;color:#083b56}
+
+/* Footer */
+.site-footer{padding:14px 0;background:transparent;text-align:center;color:var(--muted);margin-top:24px}
+
+/* Modal */
+.modal{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(3,6,23,0.45);z-index:500;opacity:0;pointer-events:none;transition:opacity .18s ease;
+}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-dialog{
+  width:92%;max-width:420px;background:white;padding:18px;border-radius:12px;position:relative;
+  box-shadow:0 12px 40px rgba(2,6,23,0.18);
+}
+.close-btn{position:absolute;right:12px;top:10px;border:0;background:transparent;font-size:18px;cursor:pointer}
+.modal-body label{display:block;margin:8px 0 6px;font-weight:700;font-size:13px}
+.modal-body input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3}
+.muted{color:var(--muted);font-size:13px;margin-bottom:8px}
+
+/* STK progress and loader */
+.hidden{display:none}
+.stk-progress{display:flex;align-items:center;gap:12px}
+.loader{
+  width:36px;height:36px;border-radius:50%;border:4px solid #e6edf3;border-top-color:var(--accent);
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* result */
+.stk-result p{margin:8px 0}
+
+/* small screens */
+@media (max-width:520px){
+  .brand-text h1{font-size:16px}
+  .logo-circle{width:44px;height:44px;font-size:18px}
+  }
