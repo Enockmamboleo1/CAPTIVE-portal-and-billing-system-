@@ -1,6 +1,6 @@
 /* ---------- DC WiFi JS (script.js) ---------- */
-/* Client-side demo/simulation only.
-   Real deployments require server-side Daraja integration. */
+/* Client-side.
+   Real deployments by server-side Daraja integration. */
 
 document.addEventListener('DOMContentLoaded', () => {
   // update year
