@@ -1,7 +1,7 @@
 /* ---------- DC WiFi Theme CSS (style.css) ---------- */
 :root{
-  --accent:#0077a9;    /* DC blue */
-  --accent-2:#00a89b;  /* greenish accent */
+  --accent:#0077a9;    /* DC red */
+  --accent-2:#00a89b;  /* redish  accent */
   --muted:#6b7280;
   --bg:#f4f7fb;
   --card:#ffffff;
@@ -55,7 +55,7 @@ body{
 
 /* Top nav */
 .link-btn{
-  color:white;
+  color:red;
   background:transparent;border:1px solid rgba(255,255,255,0.18);
   padding:8px 12px;border-radius:6px;
   cursor:pointer;font-weight:600;
@@ -111,7 +111,7 @@ body{
 
 /* Buttons */
 .btn{
-  background:var(--accent);color:white;padding:10px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;
+  background:var(--accent);color:blue;padding:10px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;
 }
 .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(0,0,0,0.06)}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
