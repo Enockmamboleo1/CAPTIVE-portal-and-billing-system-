@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('mpesaModal');
   const closeModal = document.getElementById('closeModal');
   closeModal.addEventListener('click', () => closeModalWindow());
-  document.getElementById('Stk').addEventListener('click', StkPush);
-  document.getElementById('Fail').addEventListener('click', Failure);
+  document.getElementById('simulateStk').addEventListener('click', simulateStkPush);
+  document.getElementById('simulateFail').addEventListener('click', simulateFailure);
   document.getElementById('doneBtn').addEventListener('click', () => closeModalWindow(true));
 });
 
