@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('mpesaModal');
   const closeModal = document.getElementById('closeModal');
   closeModal.addEventListener('click', () => closeModalWindow());
-  document.getElementById('simulateStk').addEventListener('click', simulateStkPush);
-  document.getElementById('simulateFail').addEventListener('click', simulateFailure);
+  document.getElementById('Stk').addEventListener('click', StkPush);
+  document.getElementById('Fail').addEventListener('click', Failure);
   document.getElementById('doneBtn').addEventListener('click', () => closeModalWindow(true));
 });
 
@@ -54,9 +54,9 @@ function onVoucherSubmit(e) {
     return;
   }
 
-  // In a real system we would call the backend to validate voucher.
-  // Here we simulate success if code length >=4
-  if (code.length >= 4) {
+  // In a this system call the backend to validate voucher.
+  // Here read success if code length >=6
+  if (code.length >= 6) {
     alert(`Voucher ${code} activated for ${phone}. You are now connected.`);
     // Optionally show connection UI or redirect
   } else {
@@ -90,7 +90,7 @@ function openPaymentModal(pkg) {
   modal.setAttribute('aria-hidden', 'false');
 
   // fill modal info
-  document.getElementById('modalTitle').textContent = 'Pay with M-Pesa (simulation)';
+  document.getElementById('modalTitle').textContent = 'Pay with M-Pesa)';
   document.getElementById('selectedPlanLine').textContent = `Plan: ${pkg.name} — Ksh ${pkg.price}`;
   document.getElementById('phoneInput').value = '';
   hideElementById('stkProgress');
@@ -126,9 +126,9 @@ function simulateStkPush() {
   showElementById('stkProgress');
   hideElementById('stkResult');
 
-  // simulate waiting for user to enter MPESA PIN and complete payment
+  // display waiting for user to enter MPESA PIN and complete payment
   setTimeout(() => {
-    // simulate success 90% of the time
+    // display success 90% of the time
     const success = Math.random() < 0.92;
     hideElementById('stkProgress');
 
@@ -141,9 +141,9 @@ function simulateStkPush() {
   }, 2200 + Math.floor(Math.random() * 2200));
 }
 
-function simulateFailure(){
+function display Failure(){
   hideElementById('stkProgress');
-  showStkResult(false, 'Simulated failure: transaction timed out. Try again.');
+  showStkResult(false, 'display failure: transaction timed out. Try again.');
 }
 
 /* ---------- result UI ---------- */
@@ -163,7 +163,7 @@ function showStkResult(success, message, voucher) {
   hideElementById('stkProgress');
   showElementById('stkResult');
 
-  // small beep (optional) — comment out if not wanted
+  // small beep (mandatory) — comment out if not wanted
   // playBeep(success ? 880 : 220);
 }
 
