@@ -54,9 +54,9 @@ function onVoucherSubmit(e) {
     return;
   }
 
-  // In a this system call the backend to validate voucher.
-  // Here read success if code length >=6
-  if (code.length >= 6) {
+  // If this system was real we would call the backend to validate voucher.
+  // Here read success if code length >=4
+  if (code.length >= 4) {
     alert(`Voucher ${code} activated for ${phone}. You are now connected.`);
     // Optionally show connection UI or redirect
   } else {
@@ -126,9 +126,9 @@ function simulateStkPush() {
   showElementById('stkProgress');
   hideElementById('stkResult');
 
-  // display waiting for user to enter MPESA PIN and complete payment
+  // simulate waiting for user to enter MPESA PIN and complete payment
   setTimeout(() => {
-    // display success 90% of the time
+    // simulate success 90% of the time
     const success = Math.random() < 0.92;
     hideElementById('stkProgress');
 
