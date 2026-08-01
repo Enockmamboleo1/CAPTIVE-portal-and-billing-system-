@@ -54,8 +54,8 @@ function onVoucherSubmit(e) {
     return;
   }
 
-  // If this system was real we would call the backend to validate voucher.
-  // Here read success if code length >=4
+  // In a real system we would call the backend to validate voucher.
+  // Here we simulate success if code length >=4
   if (code.length >= 4) {
     alert(`Voucher ${code} activated for ${phone}. You are now connected.`);
     // Optionally show connection UI or redirect
@@ -90,7 +90,7 @@ function openPaymentModal(pkg) {
   modal.setAttribute('aria-hidden', 'false');
 
   // fill modal info
-  document.getElementById('modalTitle').textContent = 'Pay with M-Pesa)';
+  document.getElementById('modalTitle').textContent = 'Pay with M-Pesa (simulation)';
   document.getElementById('selectedPlanLine').textContent = `Plan: ${pkg.name} — Ksh ${pkg.price}`;
   document.getElementById('phoneInput').value = '';
   hideElementById('stkProgress');
@@ -141,9 +141,9 @@ function simulateStkPush() {
   }, 2200 + Math.floor(Math.random() * 2200));
 }
 
-function display Failure(){
+function simulateFailure(){
   hideElementById('stkProgress');
-  showStkResult(false, 'display failure: transaction timed out. Try again.');
+  showStkResult(false, 'Simulated failure: transaction timed out. Try again.');
 }
 
 /* ---------- result UI ---------- */
@@ -163,7 +163,7 @@ function showStkResult(success, message, voucher) {
   hideElementById('stkProgress');
   showElementById('stkResult');
 
-  // small beep (mandatory) — comment out if not wanted
+  // small beep (optional) — comment out if not wanted
   // playBeep(success ? 880 : 220);
 }
 
